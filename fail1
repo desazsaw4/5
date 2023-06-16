@@ -1,0 +1,15 @@
+function generate_random_password($length) {
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $password = '';
+    $chars_length = strlen($chars);
+
+    for ($i = 0; $i < $length; $i++) {
+        $random_index = rand(0, $chars_length - 1);
+        $password .= $chars[$random_index];
+    }
+
+    return $password;
+}
+
+$password = generate_random_password(8);
+echo $password;
